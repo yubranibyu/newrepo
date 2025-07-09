@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%- block('title') %></title>
+  <link rel="stylesheet" href="/css/styles.css" media="screen" >
+</head>
+<%- include('../partials/head') %>
+<%- block('head') %>  
+<body>
+
+  <%- include('../partials/navigation') %>
+  <%- include('../partials/header') %>
+  <main>
+    <%- block('main') %>
+  </main>
+  <%- block('content') %>
+  <%- body %>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>
