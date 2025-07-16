@@ -1,10 +1,13 @@
-/// ******************************************
+// ******************************************
 // This is the application server
 // ******************************************
 
 const express = require("express")
 const engine = require("ejs-mate")
 const path = require("path")
+
+const baseController = require("./controllers/baseController") // 
+const invRoute = require("./routes/invRoute")
 
 const app = express()
 
@@ -20,20 +23,14 @@ app.set("layout", "./layouts/layout")
 // Static files middleware
 // ******************************************
 
-// ✅ The simplest way (directly here)
 app.use(express.static(path.join(__dirname, "public")))
-
-// Or you could use your separate static routes file
-// const staticRoutes = require('./routes/static')
-// app.use(staticRoutes)
+app.use("/inv", invRoute)
 
 // ******************************************
 // Routes
 // ******************************************
 
-app.get("/", (req, res) => {
-  res.render("index", { title: "Home" })
-})
+app.get("/", baseController.buildHome) // 
 
 // ******************************************
 // Server host name and port
