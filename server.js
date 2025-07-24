@@ -38,8 +38,9 @@ app.use(async (err, req, res, next) => {
   })
 })
 
-// Start the server
-const PORT = process.env.PORT || 5500
-app.listen(PORT, () => {
-  console.log(`🚗:) CSE Motors app listening on http://localhost:${PORT}`)
+const PORT = process.env.PORT || 10000
+const HOST = "0.0.0.0"
+
+app.listen(PORT, HOST, () => {
+  console.log(`🚗:) CSE Motors app listening on http://${HOST}:${PORT}`)
 })
