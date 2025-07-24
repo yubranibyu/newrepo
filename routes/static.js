@@ -1,11 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
+const baseController = require("../controllers/baseController")
 
-// Static resource routing
-router.use(express.static('public'));
-router.use('/css', express.static('public/css'));
+router.get("/", baseController.buildHome)
 
-router.use('/js', express.static('public/js'));
-router.use('/images', express.static('public/images'));
-
-module.exports = router;
+module.exports = router

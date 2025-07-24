@@ -45,3 +45,25 @@ When you installed Git and cloned the remote repository in week 1, you should ha
 1. Go to http://localhost:5500 in a browser tab. Nothing should be visible as the server has not been setup to repond to that route.
 2. Add "/filename.html" to the end of the URL (replacing filename with the name of the file you moved to the public folder).
 3. You should see that page in the browser.
+# CSE 340 - Assignment 3: MVC Vehicle Inventory Application
+
+## 📁 Project Description
+
+This project is a basic vehicle inventory web application developed using the **MVC architecture**. It displays vehicle classifications and detailed vehicle information stored in a PostgreSQL database. This assignment covers the use of dynamic routing, EJS views, layout templates, and error handling.
+
+---
+
+## 🛠 Technologies Used
+
+- Node.js
+- Express
+- EJS + EJS-Mate
+- PostgreSQL
+- pg (node-postgres)
+- CSS (custom style)
+- Express-session & connect-pg-simple
+
+---
+
+## 🧱 Project Structure
+

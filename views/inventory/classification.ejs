@@ -1,10 +1,11 @@
-<%- include("../partials/head") %>
-<%- include("../partials/header") %>
-<%- include("../partials/navigation") %>
+<% layout('layouts/layout') -%>
 
 <main>
   <h1><%= title %></h1>
-  <%- grid %>
-</main>
 
-<%- include("../partials/footer") %>
+  <% if (grid) { %>
+    <%- grid %> 
+  <% } else { %>
+    <p>No vehicles could be found for this classification.</p>
+  <% } %>
+</main>

@@ -189,3 +189,145 @@ footer {
   }
 }
 
+.vehicle-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vehicle-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.vehicle-info {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .vehicle-detail {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .vehicle-info {
+    margin-left: 2rem;
+    max-width: 50%;
+  }
+}
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.vehicle-detail img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.vehicle-info {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.vehicle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 0;
+  justify-content: flex-start;
+}
+
+.vehicle-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.vehicle-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.vehicle-card h2 a {
+  text-decoration: underline;
+  color: blue;
+  font-size: 1.1rem;
+}
+
+.vehicle-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+/* ====== Estilos para classification.ejs ====== */
+
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  list-style: none;
+}
+
+#inv-display li {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+#inv-display li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#inv-display img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.namePrice {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.vehicle-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  align-items: center;
+}
+
+.vehicle-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-detail-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-detail-info strong {
+  color: #0b3d91;
+}

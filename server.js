@@ -1,43 +1,45 @@
-// ******************************************
-// This is the application server
-// ******************************************
-
+// Required modules
 const express = require("express")
-const engine = require("ejs-mate")
-const path = require("path")
-
-const baseController = require("./controllers/baseController") // 
-const invRoute = require("./routes/invRoute")
-
 const app = express()
+const path = require("path")
+require("dotenv").config()
 
-// Configure EJS-Mate as the view engine
+// View engine setup using ejs-mate
+const engine = require("ejs-mate")
 app.engine("ejs", engine)
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
+app.use(express.static("public"));
 
-// OPTIONAL: define your main layout
-app.set("layout", "./layouts/layout")
-
-// ******************************************
-// Static files middleware
-// ******************************************
-
+// Middleware
 app.use(express.static(path.join(__dirname, "public")))
-app.use("/inv", invRoute)
+app.use(express.urlencoded({ extended: true }))
 
-// ******************************************
 // Routes
-// ******************************************
+const staticRoutes = require("./routes/static")
+const invRoutes = require("./routes/invRoute")
 
-app.get("/", baseController.buildHome) // 
+app.use("/", staticRoutes)
+app.use("/inv", invRoutes)
 
-// ******************************************
-// Server host name and port
-// ******************************************
-const HOST = "localhost"
-const PORT = 5500
+// Base controller
+const baseController = require("./controllers/baseController")
+app.get("/", baseController.buildHome)
 
+// Error handling middleware
+app.use(async (err, req, res, next) => {
+  console.error("🔥 Server Error:", err.stack)
+
+  const nav = await require("./utilities/").getNav()
+  res.status(500).render("errors/error", {
+    title: "Server Error",
+    message: err.message,
+    nav,
+  })
+})
+
+// Start the server
+const PORT = process.env.PORT || 5500
 app.listen(PORT, () => {
-  console.log(`trial app listening on http://${HOST}:${PORT}`)
+  console.log(`🚗:) CSE Motors app listening on http://localhost:${PORT}`)
 })
