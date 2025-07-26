@@ -331,3 +331,317 @@ footer {
 .vehicle-detail-info strong {
   color: #0b3d91;
 }
+/* ==== Forms ==== */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #2b5dab;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e4580;
+}
+
+/* ==== Messages ==== */
+.notice {
+  background-color: #d1f5d3;
+  border: 1px solid #4caf50;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #2e7d32;
+  margin: 1rem 0;
+}
+
+.errors {
+  list-style: none;
+  padding: 0;
+  background-color: #ffe2e2;
+  border: 1px solid #e57373;
+  border-radius: 6px;
+  color: #b71c1c;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.errors li {
+  margin-bottom: 0.5rem;
+}
+
+/* ==== Link List ==== */
+ul {
+  margin-top: 1rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #2b5dab;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+.flash-message {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #badbcc;
+  border-radius: 4px;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+/* Message box */
+.message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form container */
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Labels */
+form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs, selects and textareas */
+form input[type="text"],
+form input[type="number"],
+form input[type="url"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+}
+
+/* Submit Button */
+form button,
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #888;
+}
+/* ======= Reset ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======= Body & General ======= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ======= Header and Navigation ======= */
+nav, header, footer {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav a {
+  color: #ffffff;
+  margin-right: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Titles ======= */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* ======= Message Box ======= */
+.message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======= Form Container ======= */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* ======= Labels & Inputs ======= */
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="url"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #fafafa;
+  margin-bottom: 1rem;
+}
+
+/* ======= Buttons ======= */
+form button,
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ======= Links ======= */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Footer ======= */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+h1 {color: black;}

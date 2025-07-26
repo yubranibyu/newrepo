@@ -12,6 +12,12 @@
   <%- include('../partials/navigation') %>
   <%- include('../partials/header') %>
   <main>
+    <% if (message && message.length > 0) { %>
+      <div class="flash-message">
+        <%= message %>
+      </div>
+    <% } %>
+
     <%- block('main') %>
   </main>
   <%- block('content') %>
