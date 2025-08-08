@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<h1>Welcome <%= locals.accountData?.account_firstname %>!</h1>
+
+<ul>
+  <li><a href="/account/update">Update Account Information</a></li>
+  <li><a href="/account/change-password">Change Password</a></li>
+
+  <% if (locals.accountData && (locals.accountData.account_type === 'Employee' || locals.accountData.account_type === 'Admin')) { %>
+    <li><a href="/inv">Inventory Management</a></li>
+  <% } %>
+</ul>
+
+<%- include('../partials/footer') %>

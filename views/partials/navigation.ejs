@@ -1,4 +1,11 @@
 <nav>
-    <%- nav %>
-    <li><a href="/inv">Inventory Management</a></li>
+  <%- nav %>
+
+  <% if (!locals.loggedin) { %>
+    <li><a href="/account/login">Login</a></li>
+    <li><a href="/account/register">Register</a></li>
+  <% } else { %>
+    <li><a href="/account">Account</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+  <% } %>
 </nav>
