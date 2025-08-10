@@ -1,18 +1,18 @@
-<header>
-  <nav>
-    <ul>
-      
-
-      <% if (!locals.loggedin) { %>
-        <li><a href="/account/login">My Account</a></li>
-      <% } else { %>
-        <li><span>Welcome <%= locals.accountData?.account_firstname %></span></li>
-        <li><a href="/account/logout">Logout</a></li>
-        <li><a href="/account">Account Management</a></li>
-        <% if (locals.accountData?.account_type === 'Employee' || locals.accountData?.account_type === 'Admin') { %>
-          <li><a href="/inventory/management">Inventory Management</a></li>
-        <% } %>
+<header class="main-header">
+  <div class="header-container">
+    <% if (locals.loggedin) { %>
+      <span class="welcome-text">
+        Welcome <%= locals.accountData?.account_firstname %>
+      </span>
+      <a href="/account/logout" class="header-link">Logout</a>
+      <a href="/account" class="header-link">Account Management</a>
+      <li><a href="/inv">Ver Inventario</a></li>
+      <% if (locals.accountData?.account_type === 'Employee' || locals.accountData?.account_type === 'Admin') { %>
+        <a href="/inventory/management" class="header-link">Inventory Management</a>
       <% } %>
-    </ul>
-  </nav>
+    <% } else { %>
+      <a href="/account/login" class="header-link">Login</a>
+      <a href="/account/register" class="header-link">Register</a>
+    <% } %>
+  </div>
 </header>

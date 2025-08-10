@@ -5,23 +5,24 @@ const accountModel = require("../models/accountModel");
 const utilities = require("../utilities");
 
 /* Login */
+/* Login */
 async function accountLogin(req, res) {
   let nav = await utilities.getNav();
-  const { email, password } = req.body;
+  const { account_email, account_password } = req.body; // 🔹 ahora coincide con la vista
 
-  const user = await accountModel.getAccountByEmail(email);
+  const user = await accountModel.getAccountByEmail(account_email);
   if (!user) {
     req.flash("notice", "Email not found.");
     return res.status(400).render("account/login", {
       title: "Login",
       nav,
       errors: null,
-      email,
+      email: account_email,
     });
   }
 
   try {
-    const match = await bcrypt.compare(password, user.password);
+    const match = await bcrypt.compare(account_password, user.password);
     if (match) {
       delete user.password;
 
@@ -50,7 +51,7 @@ async function accountLogin(req, res) {
         title: "Login",
         nav,
         errors: null,
-        email,
+        email: account_email,
       });
     }
   } catch (error) {
@@ -58,6 +59,7 @@ async function accountLogin(req, res) {
     return res.status(500).send("Internal Server Error");
   }
 }
+
 
 /* Vista principal */
 async function accountManagement(req, res) {
@@ -88,7 +90,7 @@ async function accountRegister(req, res) {
       last_name: account_lastname,
       email: account_email,
       password: hashedPassword,
-      account_type: "Client", // ✅ Usa el valor que coincida con el ENUM
+      account_type: "Customer", 
     });
 
     if (regResult) {
